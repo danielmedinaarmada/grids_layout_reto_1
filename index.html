@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Outline&display=swap" rel="stylesheet"> 
+  <title>Reto 1</title>
+  <style>
+
+    body{
+      margin:0;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      grid-template-rows: 50px 1fr;
+      grid-template-areas: "header header"
+                           "menu main";
+      
+      grid-column-gap: 5px;
+    }
+
+    .header{
+      display: grid;
+      grid-template-columns: 110px minmax(250px,400px) 200px;
+      justify-content: space-between;
+      align-items: center;
+      grid-area: header;
+      height: 100%;
+      box-shadow: 0 0 10px rgba(176, 173, 173, 0.89);
+    }
+
+    .header__menu-logo{
+      display: flex;  
+      align-items: center;
+    }
+
+    .header__logo{
+      height: 40px;
+      vertical-align: top    
+    }
+
+    .header h1{
+      font-family: 'Londrina Outline', Arial;
+      display: inline-block;
+      margin:0;
+      font-size: 23px;
+      color: red;
+    }
+
+    .header input{
+      height: 25px;
+      font-size: 12px;
+      padding: 1px 5px;
+      border-radius: 8px;
+      width: 100%;
+      outline: none;
+    }
+
+    .header input:placeholder{
+      color: gray;
+    }
+
+    .header__menu-profile{
+      display: inline;
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+    }
+
+    .header__menu-profile--user{
+      margin:0 10px;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .header__menu-profile--logo{
+      height: 30px;
+      border-radius: 25px;
+      border: 1px solid black;
+    }
+
+    .header__menu-profile--flecha{
+      height: 20px;
+    }
+
+    .menu{
+      height: 100%;
+      width: 100%;
+      padding: 5px;
+      background-color: #fc3c46;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-template-areas: menu;
+      text-align: center;
+    }
+
+    .menu__user{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu__user a, .menu__ajustes a{
+      text-decoration: none;
+      color:white;
+      display: block;
+      margin: 20px 0;
+    }
+
+    .menu__user img, .menu__ajustes img{
+      height: 40px;
+      display: block;
+      margin: auto;
+    }
+
+    .main{
+      height: 100%;
+      padding: 10px 0 0 30px;
+      grid-template-areas: main;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 30px 1fr;
+      grid-gap: 10px;
+      /*box-shadow: inset 0 8px rgba(0,0,0,0.2);*/
+      /*background: linear-gradient(to top,rgba(0,0,0,0)99%, rgba(0,0,0,0.1) 99%);*/
+      justify-content: space-evenly;
+    }
+
+    .main h2{
+      font-size: 12px;
+      margin: 0;
+      padding: 5px 0;
+      grid-column: 1 / -1;
+      justify-content: end;
+    }
+
+    .item{
+      position: relative;
+      width:100%;
+      height: 100%;
+    }
+
+    .item img {
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      object-fit: cover;
+    }
+
+    .item-details{
+      position: absolute;
+      height: 50%;
+      right:0;
+      left:0;
+      bottom:0;
+      color: white;
+      background: rgba(252,60,70,0.5);
+      padding: 5px;
+    }
+
+    .main .item h3{
+      font-size: 16px;
+      margin: 0;
+      padding: 5px 0;
+      font-weight: bold;
+    }
+
+    .item-details p {
+      margin:0;
+      font-size: 12px;
+    }
+
+
+
+  </style>
+</head>
+  <header class="header">
+    <div class="header__menu-logo">
+      <img class="header__logo" src="./img/popcorn.png" alt="Popcorn">
+      <h1>Movi.es</h1>  
+    </div>
+    <input type="text" placeholder="Busca tu Peli, actor, actriz o director favorito">
+    <div class="header__menu-profile">
+      <p class="header__menu-profile--user">Bambi Rodríguez</p>
+      <img class="header__menu-profile--logo" src="./img/bambi-logo.jpg" alt="Logo">
+      <img class="header__menu-profile--flecha" src="./img/clasificar-abajo.png" alt="FechaAbajo">
+    </div>
+  </header>
+
+  <section class="menu">
+    <div class="menu__user">
+      <a href="/"><img src="./img/home.png" alt="Home">Home</a>
+      <a href="/"><img src="./img/fine.png" alt="Trending"><span>Trending</span></a>
+      <a href="/"><img src="./img/heart.png" alt="Más likes">Más likes</a>  
+    </div>
+     <div class="menu__ajustes">
+      <a href="/"><img src="./img/setup.png" alt="Ajustes">Ajustes</a>
+     </div>
+  </section>
+  
+
+  <section class="main">
+    <h2>Ahora en el Cine</h2>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+
+
+    <h2>Aclamadas por la crítica</h2>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+    <h2>No te debes perder</h2>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="./img/TheSecretLifeOfPets.jpeg" alt="The Secret Life Of Pets">
+        <div class="item-details">
+          <h3>The Secret Life of Pets</h3>
+          <p>El perro Max no puede ser más feliz: adora a su dueña Katie y, cuando ella se va a trabajar, disfruta junto a las mascotas vecinas, como Gidget, Chloe y Mel. Un día, Katie vuelve a casa con una sorpresa para Max: un perro llamado Duke</p>
+        </div>
+      </div>
+  </section>
+
+<body>
+ 
+</body>
+</html>
